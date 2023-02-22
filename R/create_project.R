@@ -9,8 +9,9 @@ create_project <- function(path, ...) {
   # collect ellipsis arguments
   dots <- list(...)
 
+  # rest of the function below
   demoPath_sys <- function (..., lib.loc = NULL, mustWork = FALSE){
-  system.file(..., package = "RProjectTemplate", lib.loc = lib.loc, mustWork = mustWork)
+    system.file(..., package = "RProjectTemplate", lib.loc = lib.loc, mustWork = mustWork)
   }
 
   from <- demoPath_sys("LasseigneRprojTemplate")
@@ -20,13 +21,6 @@ create_project <- function(path, ...) {
     new_path = path,
     overwrite = TRUE
   )
-
-  # utility funciton to make a replacement into a single file
-  replace_word <- function (file, pattern, replace){
-    suppressWarnings(tx <- readLines(file))
-    tx2 <- gsub(pattern = pattern, replacement = replace, x = tx)
-    writeLines(tx2, con = file)
-  }
 
   # utility funciton to loop through all the files we need to make replacements in
   replace_package_name <- function(copied_files,
@@ -39,13 +33,19 @@ create_project <- function(path, ...) {
       try({
         replace_word(
           file = copied_file,
-          pattern = "templatedemo",
+          pattern = "LasseigneRprojTemplate",
           replace = package_name
         )
       },silent = TRUE)
     }
   }
 
+  # utility funciton to make a replacement into a single file
+  replace_word <- function (file, pattern, replace){
+    suppressWarnings(tx <- readLines(file))
+    tx2 <- gsub(pattern = pattern, replacement = replace, x = tx)
+    writeLines(tx2, con = file)
+  }
 
   # main code to replace all references to templatedemo
   replace_package_name(
@@ -54,10 +54,7 @@ create_project <- function(path, ...) {
     path
   )
 
-
-
   if (dots$git) {
     git2r::init(path)
   }
-
 }

@@ -7,5 +7,5 @@ Icon: lasseigne_lab.png
 Parameter: git
 Widget: CheckboxInput
 Label: Create a git repository
-Default: On
+Default: Off
 Position: left

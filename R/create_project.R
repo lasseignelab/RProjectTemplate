@@ -47,6 +47,14 @@ create_project <- function(path, ...) {
     writeLines(tx2, con = file)
   }
 
+  # Listing copied files ***from source directory***
+  copied_files <- list.files(
+    path = from,
+    full.names = FALSE,
+    all.files = TRUE,
+    recursive = TRUE
+  )
+
   # main code to replace all references to templatedemo
   replace_package_name(
     copied_files,

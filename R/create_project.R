@@ -9,13 +9,8 @@ create_project <- function(path, ...) {
   # collect ellipsis arguments
   dots <- list(...)
 
-  # Create the project path given the name chosen by the user:
-  dir.create(path, recursive = TRUE, showWarnings = FALSE)
-  # Change the working directory to the recently created folder:
-  setwd(file.path(getwd(), path))
-
   demoPath_sys <- function (..., lib.loc = NULL, mustWork = FALSE){
-    system.file(..., package = "RProjectTemplate", lib.loc = lib.loc, mustWork = mustWork)
+  system.file(..., package = "RProjectTemplate", lib.loc = lib.loc, mustWork = mustWork)
   }
 
   from <- demoPath_sys("LasseigneRprojTemplate")
@@ -26,12 +21,12 @@ create_project <- function(path, ...) {
     overwrite = TRUE
   )
 
-  # main code to replace all references to templatedemo
-  replace_package_name(
-    copied_files,
-    basename(path),
-    path
-  )
+  # utility funciton to make a replacement into a single file
+  replace_word <- function (file, pattern, replace){
+    suppressWarnings(tx <- readLines(file))
+    tx2 <- gsub(pattern = pattern, replacement = replace, x = tx)
+    writeLines(tx2, con = file)
+  }
 
   # utility funciton to loop through all the files we need to make replacements in
   replace_package_name <- function(copied_files,
@@ -51,12 +46,6 @@ create_project <- function(path, ...) {
     }
   }
 
-  # utility funciton to make a replacement into a single file
-  replace_word <- function (file, pattern, replace){
-    suppressWarnings(tx <- readLines(file))
-    tx2 <- gsub(pattern = pattern, replacement = replace, x = tx)
-    writeLines(tx2, con = file)
-  }
 
   # main code to replace all references to templatedemo
   replace_package_name(

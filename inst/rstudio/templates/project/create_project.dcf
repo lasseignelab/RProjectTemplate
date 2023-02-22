@@ -3,17 +3,6 @@ Title: Lasseigne Lab R Markdown Project Template
 OpenFiles: README.Rmd
 Icon: lasseigne_lab.png
 
-Parameter: createGitignore
-Widget: CheckboxInput
-Label: Create .gitignore
-Default: On
-Position: left
-
-Parameter: useRenv
-Widget: CheckboxInput
-Label: Use renv with this project
-Default: On
-Position: left
 
 Parameter: git
 Widget: CheckboxInput

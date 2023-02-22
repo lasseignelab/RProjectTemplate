@@ -14,18 +14,6 @@ create_project <- function(path, ...) {
   # Change the working directory to the recently created folder:
   setwd(file.path(getwd(), path))
 
-  # activate renv if needed
-  if(dots$useRenv){
-    renv::activate(project = getwd())
-  }
-
-  # if not needed, remove the .gitignore from the copied template
-  if(!dots$createGitignore){
-    file.remove('.gitignore')
-  }
-
-  # add the specified environment to the .Renviron file
-  addEnvToRenviron(tolower(dots$chosenEnv))
 
   if (dots$git) {
     git2r::init(path)

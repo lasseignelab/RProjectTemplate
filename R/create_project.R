@@ -69,7 +69,6 @@ create_project <- function(path, ...) {
     git2r::init(path = ".", branch = "main")
     git2r::add(path = ".")
     git2r::commit(repo = ".", message = "Initial Project Commit")
-    #git2r::remote_add(name = basename(path), url = paste0("https://github.com/lasseignelab/",basename(path),".git"))
   }
 
   if (dots$createGitignore){
@@ -83,36 +82,37 @@ create_project <- function(path, ...) {
         "\n",
         "# User-specific files",
         ".Ruserdata",
+        "data/",
         "\n",
         " # Example code in package build process",
         "*-Ex.R",
         "\n",
         " # Output files from R CMD build",
-    "/*.tar.gz",
-    "\n",
-    "# Output files from R CMD check",
-    "/*.Rcheck/",
-    "\n",
-      "# RStudio files",
-      ".Rproj.user/",
-      "\n" ,
-      "# produced vignettes",
-     " vignettes/*.html",
-   " vignettes/*.pdf",
+        "/*.tar.gz",
+        "\n",
+        "# Output files from R CMD check",
+        "/*.Rcheck/",
+        "\n",
+        "# RStudio files",
+     ".Rproj.user/",
+     "\n" ,
+  "# produced vignettes",
+  " vignettes/*.html",
+  " vignettes/*.pdf",
+  "\n",
+  "# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3",
+   ".httr-oauth",
    "\n",
-    "# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3",
-    ".httr-oauth",
-    "\n",
-    "# knitr and R markdown default cache directories",
-    "*_cache/",
-      "/cache/",
-      "\n" ,
-     " # Temporary files created by R markdown",
-      "*.utf8.md",
-    "*.knit.md",
-    "\n",
-    "# R Environment Variables",
-    ".Renviron")
+   "# knitr and R markdown default cache directories",
+   "*_cache/",
+     "/cache/",
+     "\n" ,
+    " # Temporary files created by R markdown",
+     "*.utf8.md",
+   "*.knit.md",
+   "\n",
+   "# R Environment Variables",
+   ".Renviron")
     writeLines(paste(git_ignores, sep = '\n'), '.gitignore')
   }
 }

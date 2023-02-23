@@ -9,19 +9,19 @@ FROM bioconductor/bioconductor_docker:RELEASE_3_14
 ##----------------------------------------------------------------------------##
 
 #### General CRAN Packages ####
-RUN R -e 'install.packages(c("tidyverse", "remotes",  "BiocManager", "devtools", “knitr”, “lintr”, “styler”, “here”))’
+RUN R -e 'install.packages(c("tidyverse", "remotes",  "BiocManager", "devtools", "knitr", "lintr", "styler", "here"))'
 
 #### Project Specific CRAN Packages ####
-# RUN R -e 'install.packages(c(“# insert CRAN Packages here #”))’
+# RUN R -e 'install.packages(c("# insert CRAN Packages here #"))'
 
 #### Project Specific GitHub Packages ####
-# RUN R -e 'devtools::install_github(“# insert GitHub repos here #”)’
+# RUN R -e 'devtools::install_github("# insert GitHub repos here #")'
 
-# RUN R -e 'remotes::install_github("# insert GitHub repos here #”)'
+# RUN R -e 'remotes::install_github("# insert GitHub repos here #")'
 
 #### Project Specific Bioconductor Packages ####
 
-# RUN R -e 'BiocManager::install(c("# insert Bioconductor Packages here #”"))'
+# RUN R -e 'BiocManager::install(c("# insert Bioconductor Packages here #""))'
 
 ##----------------------------------------------------------------------------##
 ## SYSTEM PACKAGES

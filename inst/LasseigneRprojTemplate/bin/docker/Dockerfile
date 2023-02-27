@@ -21,7 +21,7 @@ RUN R -e 'install.packages(c("tidyverse", "remotes",  "BiocManager", "devtools",
 
 #### Project Specific Bioconductor Packages ####
 
-# RUN R -e 'BiocManager::install(c("# insert Bioconductor Packages here #""))'
+# RUN R -e 'BiocManager::install(c("# insert Bioconductor Packages here #"))'
 
 ##----------------------------------------------------------------------------##
 ## SYSTEM PACKAGES

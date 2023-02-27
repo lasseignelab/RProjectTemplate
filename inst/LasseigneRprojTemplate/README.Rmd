@@ -1,7 +1,7 @@
 ---
 title: "README"
 author:
-output: html_document
+output: github_document
 date: "`r Sys.Date()`"
 ---
 
@@ -25,7 +25,7 @@ This is an R Markdown document created for the Lasseigne Lab R Project Template.
 Include a code chunk on how to install your package 
 
 **[if project will not be a package]** - this section should be titled "Dependencies" or "Scripts"
-Include a code chunk (if relevant) on what your project depends on. Include a "script tree" on how to reproduce your results with descriptions for scripts
+Include a code chunk (if relevant) on what your project depends on. Include a "script tree" on how to reproduce your results with descriptions for all scripts
 
 ## Authors 
 
@@ -46,3 +46,4 @@ List project acknowledgements.
 
 ## License 
 
+This repository is licensed under the MIT License, see LICENSE documentation within this repository for more details.

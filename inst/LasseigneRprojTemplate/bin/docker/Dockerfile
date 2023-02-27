@@ -9,7 +9,7 @@ FROM bioconductor/bioconductor_docker:RELEASE_3_16
 ##----------------------------------------------------------------------------##
 
 #### General CRAN Packages ####
-RUN R -e 'install.packages(c("tidyverse", "remotes",  "BiocManager", "devtools", "knitr", "lintr", "styler", "here"))'
+RUN R -e 'install.packages(c("tidyverse", "remotes",  "BiocManager", "devtools", "knitr", "lintr", "styler", "here", "markdown", "rmarkdown"))'
 
 #### Project Specific CRAN Packages ####
 # RUN R -e 'install.packages(c("# insert CRAN Packages here #"))'

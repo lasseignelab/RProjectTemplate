@@ -6,7 +6,7 @@ FROM bioconductor/bioconductor_docker:RELEASE_3_16
 
 #### Leave the top line the same for each new project. Uncomment lines to add ####
 RUN R -e 'install.packages(c("tidyverse", "remotes",  "BiocManager", "devtools", "knitr", "lintr", "styler", "here", "markdown", "rmarkdown"))' \
-#  && R -e 'install.packages(c("< insert GitHub repos here >")' \
+#  && R -e 'install.packages(c("< insert CRAN repos here >")' \
 #  && R -e 'devtools::install_github("< insert GitHub repos here >")' \
 #  && R -e 'remotes::install_github("< insert GitHub repos here >")' \
 #  && R -e 'BiocManager::install(c("< insert Biconductor repos here >"))'
